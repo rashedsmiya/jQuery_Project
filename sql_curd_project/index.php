@@ -9,46 +9,7 @@
   <body>
   
   
-        <div class="section py-5">
-            <div class="container my-5">
-               <div class="row">
-                   <div class="col-10 mx-auto">
-                       <div class="card">
-                           <div class="card-header">
-                              <h2>Catagory List</h2>
-                           </div>
-                           <div class="card-body">
-                               <div class="table-responsive">
-                                  <table class="table table-striped">
-                                        <thead>
-                                              <tr>
-                                                  <th>Sl</th>
-                                                  <th>Name</th>
-                                                  <th>Status</th>
-                                                  <th>Created At</th>
-                                                  <th>Update At</th>
-                                                  <th>Action</th>
-                                              </tr>
-                                        </thead>
-                                        <tbody>
-                                              <tr>
-                                                  <td>1</td>
-                                                  <td>Hasan</td>
-                                                  <td>Active</td>
-                                                  <td>11-11-2222</td>
-                                                  <td>null</td>
-                                                  <td>Action</td>
-                                              </tr>
-                                        </tbody>
-                                  </table>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-            </div>
-        </div>
-         
+        
 
 
 

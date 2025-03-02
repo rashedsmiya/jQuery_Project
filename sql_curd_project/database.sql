@@ -1,13 +1,25 @@
-create database if not exists `student_management` default character set utf8mb4 collate utf8mb4_general_ci;
+CREATE DATABASE IF NOT EXISTS `ecom` 
+DEFAULT CHARACTER SET utf8mb4 
+COLLATE utf8mb4_general_ci;
+
 USE `ecom`;
 
-create table if not exists `categories` (
-   `id` bigint(20) unsigned not null auto_increment primary key,
-   `name` varchar(255) not null unique,
-   `created_at` timestamp not null default current_timestamp,
-   `updated_at` timestamp not null default current_timestamp on update current_timestamp
-) engine=InnoDB default charset=utf8mb4 collate=utf8mb4_general_ci;
+CREATE TABLE IF NOT EXISTS `categories` (
+    `id` BIGINT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+    `name` VARCHAR(255) NOT NULL UNIQUE,
+    `status` TINYINT(1) NOT NULL DEFAULT 1 COMMENT '1: Active, 0: Inactive',
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP
+);
 
-create table if not exists `products` (
-   
+CREATE TABLE IF NOT EXISTS `products` (
+    `id` BIGINT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `category_id` BIGINT(20) UNSIGNED NOT NULL,
+    `name` VARCHAR(255) NOT NULL,
+    `description` TEXT NULL,
+    `price` DECIMAL(10,2) NOT NULL,
+    `status` TINYINT(1) NOT NULL DEFAULT 1 COMMENT '1: Active, 0: Inactive',
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`) 
 );
